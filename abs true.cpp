@@ -1,22 +1,50 @@
-#include <cinttypes>
 #include <iostream>
+#include <limits>
+
+using namespace std;
+
+bool saisirEntier(int &n, int min, int max)
+{
+    while(!(std::cin >> n) || (n < min || n > max) )
+    {
+        if(cin.eof())
+        {
+            return false;
+        }
+        else if(cin.fail())
+        {
+            cout << "erreur de saisie ! Recommencez" << endl;
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cout << "entrer un entier ? ";
+        }
+        else
+        {
+            cout << "Entrée incorrecte ! Recommencez" << endl;
+        }
+    }
+    return true;
+}
 
 int main()
+
 {
-do
-{
-	int32_t (x);
-    printf( "Veuillez saisir un entier : " );
-    scanf( "%d", &x );
+int i;
 
-  abs(x);
-  printf( "La valeur absolue de %d vaut %d.\n",x,abs(x));  
-}
+for ( i=0; i<=10;i++) {
 
-while (abs);
 
-}
 
+int (x);
+
+        cout << "entrer un entier ? ";
+    if(saisirEntier(x, -200000000,200000000 ))
+
+    abs(x);
+        cout<<"La valeur absolue de " <<x<<" vaut "<<abs(x)<<endl;
+        cin.clear();}
+
+return 0;}
 
 
  
